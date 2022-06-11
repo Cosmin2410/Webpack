@@ -2,10 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'production', //production or development
+
+  // Where to look for one or more files to compile
   entry: {
     bundle: path.resolve(__dirname, 'src/index.js'),
   },
+
+  // Where to create the file
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js',
@@ -13,6 +17,7 @@ module.exports = {
     assetModuleFilename: '[name][ext]',
   },
 
+  // For debuggin
   devtool: 'source-map',
 
   devServer: {
@@ -29,11 +34,13 @@ module.exports = {
 
   module: {
     rules: [
+      // Sass module
       {
         test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
 
+      // Babel module
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -45,6 +52,7 @@ module.exports = {
         },
       },
 
+      // Images in JS
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -53,6 +61,7 @@ module.exports = {
   },
 
   plugins: [
+    // Create HTML template
     new HtmlWebpackPlugin({
       title: 'WebPack App',
       filename: 'index.html',
@@ -60,3 +69,9 @@ module.exports = {
     }),
   ],
 };
+
+// npm init -y
+// npm i -D webpack webpack-cli
+// npm i -D sass style-loader css-loader sass-loader
+// npm i -D html html-webpack-plugin
+// npm i -D babel-loader @babel/core @babel/preset-env

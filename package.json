@@ -1,7 +1,6 @@
 {
   "name": "webpack",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
@@ -15,6 +14,7 @@
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
+    "html": "^1.0.0",
     "html-webpack-plugin": "^5.5.0",
     "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
@@ -26,5 +26,14 @@
   },
   "dependencies": {
     "axios": "^0.27.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cosmin2410/Webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cosmin2410/Webpack/issues"
+  },
+  "homepage": "https://github.com/Cosmin2410/Webpack#readme",
+  "description": ""
 }
